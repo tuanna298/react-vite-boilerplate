@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router'
 
+import AppLoading from '@/components/custom/app-loading'
 import AppLayout from '@/layouts/app-layout'
 import { lazyWithProgress } from '@/lib/utils'
 
@@ -13,7 +14,7 @@ function App() {
         <Route
           index
           element={
-            <Suspense>
+            <Suspense fallback={<AppLoading />}>
               <Home />
             </Suspense>
           }
